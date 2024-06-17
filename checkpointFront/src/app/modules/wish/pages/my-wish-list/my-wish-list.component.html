@@ -1,0 +1,8 @@
+<p>my-wish-list works!</p>
+<div
+    *ngIf="wishList$ | async as wishList"
+    class="card-container"
+>
+    <div *ngFor="let wish of wishList">
+      <app-wish-card [wish]="wish"></app-wish-card>
+    </div>

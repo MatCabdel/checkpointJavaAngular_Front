@@ -5,7 +5,7 @@ export type Wish = {
   description: string;
   estimatePrice: number;
   type: string;
-  productUrl: string;
+  urlProduct: string;
   userId: number;
 
 }

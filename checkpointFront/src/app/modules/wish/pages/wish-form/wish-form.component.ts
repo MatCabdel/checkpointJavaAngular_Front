@@ -17,7 +17,7 @@ export class WishFormComponent {
     description: "",
     estimatePrice: 0,
     type: "",
-    productUrl: "",
+    urlProduct: "",
     userId: 0
   }
   

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap');
+
+.form-container {
+  background: linear-gradient(to bottom left, rgb(139, 20, 20), rgb(58, 9, 9));
+  min-height: 100vh;
+
+  .form {
+    color: white;
+
+    h1 {
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .input-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .order {
+        display: flex;
+        flex-direction: column;
+        padding-left: 30px;
+        gap: 5px;
+
+        input {
+          width: 90%;
+        }
+      }
+
+      .description-submit {
+        width: 90%;
+        padding-left: 30px;
+      }
+    }
+
+    .btn-form {
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      button {
+        border: none;
+        background-color: white;
+        border-radius: 8px;
+        color: rgb(139, 20, 20);
+        padding: 5px 10px;
+      }
+    }
+  }
+}

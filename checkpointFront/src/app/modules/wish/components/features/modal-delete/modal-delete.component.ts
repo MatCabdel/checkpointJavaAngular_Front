@@ -7,7 +7,7 @@ import { Wish } from '../../../models/wish';
   styleUrl: './modal-delete.component.scss'
 })
 export class ModalDeleteComponent {
-  
+
   @Input() wish!: Wish;
   @Output() onCancel = new EventEmitter<void>();
   @Output() onDeleteWish = new EventEmitter<void>();
@@ -18,5 +18,9 @@ export class ModalDeleteComponent {
 
   confirmDelete() {
     this.onDeleteWish.emit();
+  }
+
+  onBackgroundClick(event: MouseEvent) {
+    this.onCancel.emit();
   }
 }

@@ -1,63 +1,73 @@
-
 <div class="form-container">
+  <app-nav></app-nav>
   <div class="form">
-  <h1>Faites un voeux</h1>
-  
-  <form #myForm="ngForm" (ngSubmit)="myForm.valid && createWish()">
-    <div class="input-form">
-    <fieldset>
-      <legend>OMG</legend>
-      <label for="name-order">Nom du souhait: </label>
-      <input
-        id="name-order"
-        name="name-order"
-        [(ngModel)]="newWish.title"
-        #lastname="ngModel"
-        type="text"
-        required
-      />
-    </fieldset>
-    <fieldset>
-      <label for="description-order">Description du souhait: </label>
-      <input
-        id="description-order"
-        name="description-order"
-        [(ngModel)]="newWish.description"
-        #lastname="ngModel"
-        type="text"
-      />
-    </fieldset>
-    <fieldset>
-      <label for="price-order">Prix estimé: </label>
-      <input
-        id="price-order"
-        name="price-order"
-        [(ngModel)]="newWish.estimatePrice"
-        #lastname="ngModel"
-        type="text"
-        required
-      />
-    </fieldset>
-    <fieldset>
-      <label for="picture-order">Photo du produit: </label>
-      <input
-      id="picture-order"
-      name="picture-order"
-      [(ngModel)]="newWish.picture"
-      #lastname="ngModel"
-      type="text"
-      required
-      />
-    </fieldset>
-    <div>
-      Form submitted ? {{ myForm.submitted }} Form valid ? {{ myForm.valid }} Form
-      invalid ? {{ myForm.invalid }}
-    </div>
+    <h1>Faites un voeu:</h1>
+
+    <form #myForm="ngForm" (ngSubmit)="myForm.valid && createWish()">
+      <div class="input-form">
+        <div class="order">
+          <label for="name-order">Nom du souhait: </label>
+          <input
+            id="name-order"
+            name="name-order"
+            [(ngModel)]="newWish.title"
+            #lastname="ngModel"
+            type="text"
+            required
+          />
+        </div>
+        <div class="order">
+          <label for="description-order">Description du souhait: </label>
+          <input
+            id="description-order"
+            name="description-order"
+            [(ngModel)]="newWish.description"
+            #lastname="ngModel"
+            type="text"
+          />
+        </div>
+        <div class="order">
+          <label for="price-order">Prix estimé: </label>
+          <input
+            id="price-order"
+            name="price-order"
+            [(ngModel)]="newWish.estimatePrice"
+            #lastname="ngModel"
+            type="text"
+            required
+          />
+        </div>
+        <div class="order">
+          <label for="picture-order">Photo du produit: </label>
+          <input
+            id="picture-order"
+            name="picture-order"
+            [(ngModel)]="newWish.picture"
+            #lastname="ngModel"
+            type="text"
+            required
+          />
+        </div>
+        <div class="order">
+          <label for="url-order">lien du produit: </label>
+          <input
+            id="url-order"
+            name="url-order"
+            [(ngModel)]="newWish.urlProduct"
+            #lastname="ngModel"
+            type="text"
+            required
+          />
+        </div>
+      <!-- <div class="description-submit">
+          Form submitted ? {{ myForm.submitted }} Form valid ?
+          {{ myForm.valid }} Form invalid ? {{ myForm.invalid }}
+        </div> --> 
+      </div>
+      <div class="btn-form">
+        <button type="reset">Restaurer</button>
+        <button type="submit">Enregistrer mon voeux</button>
+      </div>
+    </form>
   </div>
-  <div class="btn-form">
-    <button type="reset">Restaurer</button>
-    <button type="submit">Enregistrer mon voeux</button>
-  </div>
-  </form>
-  </div>
-  </div>
+</div>

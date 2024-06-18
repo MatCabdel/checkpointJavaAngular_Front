@@ -25,4 +25,8 @@ export class ModalEditComponent {
     this.updateWish.emit();
   }
 
+  onBackgroundClick(event: MouseEvent) {
+    this.closeModal.emit();
+  }
+
 }

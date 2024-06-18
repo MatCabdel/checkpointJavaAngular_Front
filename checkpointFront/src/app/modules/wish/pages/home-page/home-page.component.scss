@@ -1,25 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap");
+
 .home-container {
   min-width: 100vw;
   margin: 0 auto;
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to bottom left, rgb(139, 20, 20), rgb(58, 9, 9));
+  min-height: 100vh;
+  flex-direction: column;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    h1 {
+      text-align: center;
+      margin: 0 auto;
+      color: white;
+      font-size: 40px;
+      font-family: "Playwrite AU NSW", cursive;
+    }
+    .img-logo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 
   .buttons-container {
     display: flex;
-    justify-content: center;
     margin: 0 auto;
     flex-direction: column;
     gap: 30px;
-    padding-top: 100px;
 
     button {
       width: 300px;
       height: 30px;
       border: none;
       border-radius: 8px;
-      box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.547);
-      background-color: rgb(139, 20, 20);
-      color: white;
+      color: rgb(139, 20, 20);
+      background-color: white;
+      font-size: 1.2em;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    button:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
   }
 }

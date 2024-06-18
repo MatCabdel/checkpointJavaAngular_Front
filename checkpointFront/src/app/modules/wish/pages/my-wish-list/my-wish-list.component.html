@@ -1,8 +1,23 @@
-<p>my-wish-list works!</p>
-<div
-    *ngIf="wishList$ | async as wishList"
-    class="card-container"
->
-    <div *ngFor="let wish of wishList">
-      <app-wish-card [wish]="wish"></app-wish-card>
-    </div>
+<div *ngIf="wishList$ | async as wishList" class="card-container">
+  <app-nav></app-nav>
+  <h1>Mes voeux: </h1>
+  <div *ngFor="let wish of wishList">
+    <app-wish-card [wish]="wish"
+    ></app-wish-card>
+  </div>
+</div>
+
+<app-modal-edit
+  *ngIf="modalEditWish"
+  [(editedWish)]="editedWish"
+  (editedWishChange)="editedWish = $event"
+  (closeModal)="closeEditModal()"
+  (updateWish)="updateWish()"
+></app-modal-edit>
+
+<app-modal-delete
+  *ngIf="modalCancelWish"
+  [wish]="wishToDelete"
+  (onCancel)="closeModal()"
+  (onDeleteWish)="confirmDeleteWish()"
+></app-modal-delete>

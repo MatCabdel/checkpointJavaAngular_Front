@@ -1,4 +1,4 @@
-import { Component, DestroyRef, ElementRef, Input, ViewChild, inject } from '@angular/core';
+import { Component, DestroyRef, ElementRef, Input, OnInit, ViewChild, inject } from '@angular/core';
 import { Wish } from '../../../models/wish';
 import { WishListService } from '../../../shared/services/wish-list.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -8,7 +8,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: './wish-card.component.html',
   styleUrl: './wish-card.component.scss'
 })
-export class WishCardComponent {
+export class WishCardComponent implements OnInit {
 
   @Input()
   wish!: Wish;
@@ -24,7 +24,12 @@ export class WishCardComponent {
 
   wishService = inject(WishListService);
   modalEditWish: boolean = false;
-  editedWish: Wish = { ...this.wish };
+  editedWish: Wish = {} as Wish;
+  
+
+  ngOnInit() {
+    this.editedWish = { ...this.wish }; 
+  }
 
 
   openDeleteModal() {
@@ -47,7 +52,7 @@ export class WishCardComponent {
 
   openEditModal() {
     this.modalEditWish = true;
-    this.editedWish = { ...this.wish }; // Copy the wish to be edited
+    this.editedWish = { ...this.wish }; 
   }
 
   closeEditModal() {
@@ -55,10 +60,12 @@ export class WishCardComponent {
   }
 
   updateWish() {
+    console.log('Before Update:', this.editedWish);
     this.wishService.updateWish(this.editedWish).subscribe(updatedWish => {
       console.log('Wish updated:', updatedWish);
       this.wish = updatedWish; 
-      this.modalEditWish = false; 
+      this.modalEditWish = false;
+      console.log('After Update:', this.wish);
     });
   }
 

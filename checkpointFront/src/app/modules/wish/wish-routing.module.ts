@@ -5,6 +5,7 @@ import { MyWishListComponent } from './pages/my-wish-list/my-wish-list.component
 import { WishFormComponent } from './pages/wish-form/wish-form.component';
 
 const routes: Routes = [
+  { path: '', component: HomePageComponent },
   { path: 'home', component: HomePageComponent },
   { path: 'my-wish', component: MyWishListComponent },
   { path: 'make-a-wish', component: WishFormComponent },
